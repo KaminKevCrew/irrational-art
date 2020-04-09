@@ -1,0 +1,38 @@
+{
+  "name": "irrational-art",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaminKevCrew/irrational-art.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaminKevCrew/irrational-art/issues"
+  },
+  "homepage": "https://github.com/KaminKevCrew/irrational-art#readme",
+  "dependencies": {
+    "node": "^13.11.0",
+    "webpack": "^4.42.1",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@bit/bit.envs.compilers.react": "^1.0.14",
+    "babel-loader": "^8.1.0"
+  },
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
+  }
+}
