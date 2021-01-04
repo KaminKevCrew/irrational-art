@@ -1,6 +1,7 @@
 // require('./css/style.css');
 import toggleNav from "./navBar";
 import transformer from './transformer';
+import digByDigSqRoot from './dig_by_dig_square_root';
 import {eDigs, piDigs, phiDigs, rootTwoDigs} from './irrational-digs';
 // quick change
 let digits = "1234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321234567890987654321"
@@ -43,11 +44,13 @@ closeButton.addEventListener('click', function () {
 userInput.addEventListener('submit', function (event) {
   event.preventDefault();
   digits = document.querySelector('#user-input').value;
+  digits = digByDigSqRoot(digits, 300);
   transformer(ctx, digits, zCount);
 })
 
 digitInput.addEventListener('submit', function (event) {
   event.preventDefault();
+  digits = digByDigSqRoot(digits, 300);
   transformer(ctx, digits, zCount);  
 })
 
