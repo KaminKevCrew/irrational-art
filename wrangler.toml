@@ -1,5 +1,3 @@
 name = "irrational-art"
 compatibility_date = "2025-12-04"
-
-[site]
-bucket = "./dist"
+pages_build_output_dir = "./dist"
