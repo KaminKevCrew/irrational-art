@@ -1,4 +1,4 @@
-// require('./css/style.css');
+import './css/style.css';
 import toggleNav from "./navBar";
 import transformer from './transformer';
 import digByDigSqRoot from './dig_by_dig_square_root';
