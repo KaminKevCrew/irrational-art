@@ -1,1 +1,65 @@
-<!doctype html><html lang="en"><head><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Irrational-Art</title></head><body><div class="modal"><div class="intro-message"><h2>Welcome to Irrational art!</h2><p class="welcome-message">You are at visiting the least rational site on the internet; The nav bar contains several buttons, and a text entry field. Each of the preset buttons will render 20 thousand digits of e, pi, phi, or root-two. If you choose to enter your own digits, those digits will be rendered! (decimal digits only please.)</p><p class="how-to-use">Each individual digit corresponds to both a color, and a vector. The digit 0 will be a line segment straight up, and will have a gold-ish color. The line segments that correspond to each following digit continue around an imaginary circle like hands on a clock. However, we only have 10 directions instead of 12. There are white line segments that denote the beginning and end of each number.</p><p class="call-to-action">Feel free to have a look around and give it a try yourself!</p><button class="close">Check it out!</button></div></div><header><h1 class="logo">Irrational Art</h1><ul class="nav"><li class="navdiv"></li><li class="navlink e"><button>E</button></li><li class="navdiv"></li><li class="navlink phi"><button>Phi</button></li><li class="navdiv"></li><li class="navlink pi"><button>Pi</button></li><li class="navdiv"></li><li class="navlink root-two"><button>Root Two</button></li><li class="navdiv"></li><li class="navlink user"><form class="user-input"><label for="user-input">Add Your Own Digits:</label> <input name="user-input" id="user-input"> <input type="submit" value="Submit" id="user-submit"></form><form class="digit-input"><label for="digit-input">How many digits? [1..20000]</label> <input name="digit-input" id="digit-input"> <input type="submit" value="Submit" id="digit-submit"></form></li></ul><div class="burger"><i class="fas fa-bars"></i></div></header><canvas id="canvas" width="1800" height="1200"></canvas><script defer="defer" src="bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Irrational-Art</title>
+  </head>
+  <body>
+    <div class="modal">
+      <div class="intro-message">
+        <h2>
+          Welcome to Irrational art!
+        </h2>
+        <p class="welcome-message">
+          You are at visiting the least rational site on the internet; The nav bar contains several buttons, and a text entry field. Each of the preset buttons will render 20 thousand digits of e, pi, phi, or root-two. If you choose to enter your own digits, those digits will be rendered! (decimal digits only please.)
+        </p>
+        <p class="how-to-use">
+          Each individual digit corresponds to both a color, and a vector. The digit 0 will be a line segment straight up, and will have a gold-ish color. The line segments that correspond to each following digit continue around an imaginary circle like hands on a clock. However, we only have 10 directions instead of 12. There are white line segments that denote the beginning and end of each number.
+        </p>
+        <p class="call-to-action">
+          Feel free to have a look around and give it a try yourself!
+        </p>
+        <button class='close'>
+          Check it out!
+        </button>
+      </div>
+    </div>
+    <header>
+      <h1 class="logo">Irrational Art</h1>
+      <ul class="nav">
+        <li class='navdiv'></li>
+        <li class="navlink e"><button>E</button></li>
+        <li class='navdiv'></li>
+        <li class="navlink phi"><button>Phi</button></li>
+        <li class='navdiv'></li>
+        <li class="navlink pi"><button>Pi</button></li>
+        <li class='navdiv'></li>
+        <li class="navlink root-two"><button>Root Two</button></li>
+        <li class='navdiv'></li>
+        <li class="navlink user">
+          <form class='user-input'>
+            <label for='user-input'>
+              Add Your Own Digits:
+            </label>
+            <input type="text" name='user-input' id="user-input">
+            <input type='submit' value='Submit' id='user-submit'>
+          </form>
+          <form class='digit-input'>
+            <label for='digit-input'>
+              How many digits? [1..20000]
+            </label>
+            <input type="text" name='digit-input' id="digit-input">
+            <input type='submit' value='Submit' id='digit-submit'>
+          </form>
+        </li>
+      </ul>
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+    <canvas id="canvas" width=1800 height=1200></canvas>
+  <script defer src="bundle.js"></script></body>
+</html>
