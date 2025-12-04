@@ -1,0 +1,49 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish to Cloudflare Pages (preview/production)
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: irrational-art
+          directory: dist
+          # For PRs this will create a Preview; for pushes to master it will deploy Production
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref_name }}
+
+    # Notes:
+    # - Create two repository secrets in GitHub:
+    #   - CLOUDFLARE_API_TOKEN (Pages:Edit or All Pages permissions)
+    #   - CLOUDFLARE_ACCOUNT_ID (your Cloudflare account ID)
+    # - The action will create the Pages project named "irrational-art" on first run if it doesn't exist.
+    # - Build command: npm run build
+    # - Output directory: dist
