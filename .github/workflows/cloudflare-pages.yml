@@ -3,7 +3,7 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: irrational-art
           directory: dist
-          # For PRs this will create a Preview; for pushes to main it will deploy Production
+          # For PRs this will create a Preview; for pushes to master it will deploy Production
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref_name }}
 
